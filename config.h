@@ -8,31 +8,12 @@
 //
 // Copyright: See COPYING file that comes with this distribution
 //
-//
-
-
-/// 3 # Initial tanks per player (first line)
-/// 15 # tank speed in meters/second
-/// 90 # Tank turn rate in degrees/second
-/// 60 # Projectile velocity in meters/second
-/// 3 # Maximum simultaneous per-tank projectile count
-/// 120 # Rate of fire in rounds/minute
-/// 12 # Initial ammo count
-/// 200 # Detectibility range in meters
-/// 150 # Engageability range in meters
-/// sound/movesound.ogg # Sound filename for move
-/// sound/firesound.ogg # Sound filename for fire
-/// sound/killsound.ogg # Sound filename for kill
-// 10.0.0.100 # IP addresses of participating computers, one per line
-// 10.0.0.101
-// 10.0.0.102
 
 #ifndef CONFIG_H
 #define CONFIG_H
 
 #include <QFile>
 #include <QStringList>
-//#include <QProcess>
 #include <iostream>
 using namespace std;
 
@@ -58,6 +39,7 @@ class config {
 
 	config();
 	config(QString configFile);
+	void printPublicVars();
 	qint32 parseConfigFile(QString configFile);
 	QByteArray& strip(QByteArray &ba, char commentChar = '#');
 };

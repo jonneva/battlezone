@@ -1,7 +1,6 @@
-//
 // C++ Implementation: config
 //
-// Description: 
+// Description: Functions for parsing the config file.
 //
 //
 // Author: Charles Burns
@@ -12,14 +11,15 @@
 
 #include "config.h"
 
+#define __DEBUG
 config::config()
 {
+	parseConfigFile("battlezone.cfg");
 }
 
 config::config(QString configFile)
 {
 	parseConfigFile(configFile);
-	return;	
 }
 
 QByteArray& config::strip(QByteArray &ba, char commentChar)
@@ -71,39 +71,30 @@ qint32 config::parseConfigFile(QString configFile)
 			this->strip(line);
 			playerIpList.append(line);
 		}
-		for(int i = 0; i < playerIpList.size(); ++i) {
-			cerr << playerIpList.at(i).toLocal8Bit().constData() << endl;
-		}
+#ifdef __DEBUG		
+		printPublicVars();
+#endif
 	}
 	return 0;
 }
 
-// 3                    # Initial tanks per player (first line)
-// 15                   # tank speed in meters/second
-// 90                   # Tank turn rate in degrees/second
-// 60                   # Projectile velocity in meters/second
-// 3                    # Maximum simultaneous per-tank projectile count
-// 120                  # Rate of fire in rounds/minute
-// 12                   # Initial ammo count
-// 200                  # Detectibility range in meters
-// 150                  # Engageability range in meters
-// sound/movesound.ogg  # Sound filename for move
-// sound/firesound.ogg  # Sound filename for fire
-// sound/killsound.ogg  # Sound filename for kill
-// 10.0.0.100           # IP addresses of participating computers, one per line
-// 10.0.0.101
-// 10.0.0.102
-
-// 	qint32 ;
-// 	qint32 ;
-// 	qint32 ;
-// 	qint32 ;
-// 	qint32 ;
-// 	qint32 ;
-// 	qint32 ;
-// 	qint32 playerTankMaxEngageabilityRange;
-// 	
-// 	QString soundMove;
-// 	QString soundFire;
-// 	QString soundKill;
-// 	QList<QString> playerIpList;
+#ifdef __DEBUG
+void config::printPublicVars()
+{
+	cerr << "playerStartingLives:" << playerStartingLives << endl;
+	cerr << "playerTankSpeed:" << playerTankSpeed << endl;
+	cerr << "playerTankTurnRate: " << playerTankTurnRate << endl;
+	cerr << "projectileSpeed: " << projectileSpeed << endl;
+	cerr << "playerMaxInFlightProjectiles: " << playerMaxInFlightProjectiles << endl;
+	cerr << "playerTankMaxRof: " << playerTankMaxRof << endl;
+	cerr << "playerStartingAmmo: " << playerStartingAmmo << endl;
+	cerr << "playerTankMaxDetectibilityRange: " << playerTankMaxDetectibilityRange << endl;
+	cerr << "playerTankMaxEngageabilityRange: " << playerTankMaxEngageabilityRange << endl;
+	cerr << "soundMove: " << soundMove.toLocal8Bit().constData() << endl;
+	cerr << "soundFire: " << soundFire.toLocal8Bit().constData() << endl;
+	cerr << "soundKill: " << soundKill.toLocal8Bit().constData() << endl;
+	for(int i = 0; i < playerIpList.size(); ++i) {
+		cerr << "IP address number " << i << ": " << playerIpList.at(i).toLocal8Bit().constData() << endl;
+	}
+}
+#endif
