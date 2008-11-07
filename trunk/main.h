@@ -4,5 +4,6 @@
 
 #include <QApplication>
 #include <QPushButton>
+#include "config.h"
 
 #endif

@@ -42,8 +42,9 @@ class config {
 	public:
 	// Should use an IDE with auto-fill-in for these long variable names
 	qint32 playerStartingLives;
-	qint32 playerTankSpeedMove;
+	qint32 playerTankSpeed;
 	qint32 playerTankTurnRate;
+	qint32 projectileSpeed;
 	qint32 playerMaxInFlightProjectiles;
 	qint32 playerTankMaxRof;
 	qint32 playerStartingAmmo;
@@ -58,6 +59,7 @@ class config {
 	config();
 	config(QString configFile);
 	qint32 parseConfigFile(QString configFile);
+	QByteArray& strip(QByteArray &ba, char commentChar = '#');
 };
 
 #endif
