@@ -20,8 +20,10 @@ using namespace std;
 // config class. Gets settings from config file and exposes them.
 // Exposure is public (not get/set) for simplicity.
 class config {
+// Should use an IDE with auto-fill-in for these long variable names
 	public:
-	// Should use an IDE with auto-fill-in for these long variable names
+	
+	// These are the variables from the config file.
 	qint32 playerStartingLives;
 	qint32 playerTankSpeed;
 	qint32 playerTankTurnRate;
@@ -35,8 +37,10 @@ class config {
 	QString soundMove;
 	QString soundFire;
 	QString soundKill;
+	
 	QStringList playerIpList;
 
+	// Function prototypes
 	config();
 	config(QString configFile);
 	void printPublicVars();
