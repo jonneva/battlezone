@@ -3,8 +3,11 @@
 
 
 #include <QApplication>
-#include <QPushButton>
+#include <QWidget>
 #include "config.h"
-#include "network.h"
+//#include "network.h"
+#include "view.h"
+#include "Window.h"
+
 
 #endif
