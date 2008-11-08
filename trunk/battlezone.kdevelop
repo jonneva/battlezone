@@ -137,7 +137,7 @@
       </debugarguments>
     </run>
     <general>
-      <activedir>battlezone.pro</activedir>
+      <activedir></activedir>
     </general>
     <subclassing/>
   </kdevtrollproject>

@@ -4,11 +4,12 @@ int main(int argc, char *argv[])
 {
 	QApplication app(argc, argv);
 
-	QPushButton hello("Hello world!");
-
-	
+	Window main;
 	config myConfig("battlezone.cfg");
-	
-	hello.show();
+
+	main.setWindowTitle("BattleZone");
+	main.resize(980,600);
+	main.show();
+
 	return app.exec();
 }
