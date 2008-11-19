@@ -14,6 +14,8 @@ class view : public QWidget
     	QGraphicsScene field;
     	QGraphicsView fieldofview;
 
+	
+
 
 };
 

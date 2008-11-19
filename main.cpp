@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
 	main.setWindowTitle("BattleZone");
 	main.resize(980,600);
 	main.show();
+	
 
 	return app.exec();
 }
