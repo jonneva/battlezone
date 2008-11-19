@@ -9,5 +9,4 @@
 #include "view.h"
 #include "Window.h"
 
-
 #endif
