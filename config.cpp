@@ -65,6 +65,16 @@ qint32 config::parseConfigFile(QString configFile)
 		
 		line = file.readLine();
 		playerTankMaxEngageabilityRange = this->strip(line).toInt();
+				
+		line = file.readLine();
+		soundMove = this->strip(line);
+		
+		line = file.readLine();
+		soundFire = this->strip(line);
+		
+		line = file.readLine();
+		soundKill = this->strip(line);
+
 		
 		while (!file.atEnd()) {
 			line = file.readLine();
