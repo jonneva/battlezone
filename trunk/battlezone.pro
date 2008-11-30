@@ -10,3 +10,5 @@ INCLUDEPATH += .
 # Input
 HEADERS += config.h main.h network.h view.h Window.h
 SOURCES += config.cpp main.cpp view.cpp Window.cpp
+QT += opengl \
+network
