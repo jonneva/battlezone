@@ -2,6 +2,19 @@
 
 controller::controller( QWidget *parent, int timerInterval )
 {
+	myConfig = config("battlezone.cfg");
+	QSound move(myConfig.soundMove);
+	QSound fire(myConfig.soundFire);
+	QSound kill(myConfig.soundKill);
+	move.setLoops( 5 );
+
+	keys.insert( Qt::Key_Up, Forward );
+	keys.insert( Qt::Key_Left, RotateLeft );
+	keys.insert( Qt::Key_Right, RotateRight );
+	keys.insert( Qt::Key_Down, Reverse );
+	keys.insert( Qt::Key_Space, Shoot );
+	keys.insert( Qt::Key_Escape, Exit );
+
 	if( timerInterval == 0 )
 		m_timer = 0;
 	else
@@ -14,15 +27,90 @@ controller::controller( QWidget *parent, int timerInterval )
 	rtri = rquad = 0.0f;
 }
 
-
 void controller::keyPressEvent( QKeyEvent *event )
 {
-	switch( event->key() )
-	{
-	case Qt::Key_Escape:
-		close();
+	if ( event->isAutoRepeat() || !keys.contains( event->key() ) ) {
+		event->ignore();
+		return;
 	}
+
+	Action a = keys[ event->key()];
+
+	switch ( a ) {
+		case Forward:
+			move->play();
+			break;
+
+		case RotateLeft:
+			move->play();
+			break;
+
+		case RotateRight:
+			move->play();
+			break;
+
+		case Reverse:
+			move->play();
+			break;
+
+		case Shoot:
+			fire->play();
+			break;
+
+		case Exit:
+			QApplication::exit();
+			break;
+
+
+		default:
+			event->ignore();
+			return;
+	}
+	event->accept();
 }
+
+
+void controller::keyReleaseEvent( QKeyEvent *event )
+{
+	if ( event->isAutoRepeat() || !keys.contains( event->key() ) ) {
+		event->ignore();
+		return;
+	}
+
+	Action a = keys[ event->key()];
+
+	switch ( a ) {
+
+		case Forward:
+			move->stop();
+			break;
+
+		case RotateLeft:
+			move->stop();
+			break;
+
+		case RotateRight:
+			move->stop();
+			break;
+
+		case Reverse:
+			move->stop();
+			break;
+
+		case Shoot:
+			break;
+
+		case Exit:
+			break;
+
+		default:
+			event->ignore();
+			return;
+	}
+
+	event->accept();
+}
+
 
 void controller::initializeGL()
 {
