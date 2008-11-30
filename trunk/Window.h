@@ -12,9 +12,18 @@ class Window : public QWidget
 
 public:
 	Window();
+	config myConfig;
 
+protected:
+	void keyPressEvent( QKeyEvent *event );
+	void keyReleaseEvent( QKeyEvent *event );
 private:
 	controller *myController;
+	QSound *move;
+	QSound *fire;
+	QSound *kill;
+	enum Action { Forward, RotateLeft, RotateRight, Reverse, Shoot, Exit  };
+	QMap<int, Action> keys;
 };
 
 #endif

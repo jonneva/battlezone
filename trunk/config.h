@@ -14,15 +14,13 @@
 
 #include <QFile>
 #include <QStringList>
-#include <iostream>
-using namespace std;
 
 // config class. Gets settings from config file and exposes them.
 // Exposure is public (not get/set) for simplicity.
 class config {
 // Should use an IDE with auto-fill-in for these long variable names
 	public:
-	
+
 	// These are the variables from the config file.
 	qint32 playerStartingLives;
 	qint32 playerTankSpeed;
@@ -33,14 +31,14 @@ class config {
 	qint32 playerStartingAmmo;
 	qint32 playerTankMaxDetectibilityRange;
 	qint32 playerTankMaxEngageabilityRange;
-	
+
 	QString soundMove;
 	QString soundFire;
 	QString soundKill;
-	
+
 	QStringList playerIpList;
 
-	
+
 	// Function prototypes
 	config();
 	config(QString configFile);
