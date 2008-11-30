@@ -9,11 +9,10 @@
 #include <QLayout>
 #include <QSound>
 #include <QLabel>
-#include "view.h"
+#include "controller.h"
 #include "config.h"
 
-class QSlider;
-class GLWidget;
+class controller;
 
 class Window : public QWidget
 {
@@ -23,7 +22,7 @@ public:
 //	Window(QWidget *parent=0);
 	Window();
 //	view* fov;
-//	QLabel* test;\
+//	QLabel* test;
 	config myConfig;
 
 	protected:
@@ -32,7 +31,6 @@ public:
 	virtual void keyReleaseEvent( QKeyEvent *event );
 
 private:
-
 	enum Action { Forward, RotateLeft, RotateRight, Reverse, Shoot, Exit  };
 	QMap<int,Action> keys;
 
@@ -41,11 +39,8 @@ private:
 	QSound *kill;
 
 	// TODO: Remove these lines. Just for testing.
-	QSlider *createSlider();
-	GLWidget *glWidget;
-	QSlider *xSlider;
-	QSlider *ySlider;
-	QSlider *zSlider;
+	controller *myController;
+
 };
 
 #endif
