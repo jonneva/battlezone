@@ -29,6 +29,7 @@ controller::controller( QWidget *parent, int timerInterval )
 
 void controller::keyPressEvent( QKeyEvent *event )
 {
+	cerr << "Entering controller::keyPressEvent" << endl;
 	if ( event->isAutoRepeat() || !keys.contains( event->key() ) ) {
 		event->ignore();
 		return;
@@ -60,7 +61,6 @@ void controller::keyPressEvent( QKeyEvent *event )
 		case Exit:
 			QApplication::exit();
 			break;
-
 
 		default:
 			event->ignore();
