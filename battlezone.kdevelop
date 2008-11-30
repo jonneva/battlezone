@@ -124,7 +124,7 @@
       <programargs/>
       <directoryradio>executable</directoryradio>
       <runarguments>
-        <battlezone/>
+        <battlezone></battlezone>
         <src/>
       </runarguments>
       <cwd>
@@ -132,7 +132,7 @@
         <src>/home/charles/projects/battlezone/trunk</src>
       </cwd>
       <debugarguments>
-        <battlezone/>
+        <battlezone></battlezone>
         <src/>
       </debugarguments>
     </run>
