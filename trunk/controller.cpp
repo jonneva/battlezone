@@ -27,6 +27,17 @@ void controller::initializeGL()
 	glDepthFunc(GL_LEQUAL);
 
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
+
+	// Anti-aliasing, see http://www.opengl.org/resources/code/samples/sig99/advanced99/notes/node120.html
+	// Hmm, doesn't seem to actually work.
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glEnable(GL_POINT_SMOOTH);
+	glEnable(GL_LINE_SMOOTH);
+	glEnable(GL_POLYGON_SMOOTH);
+	glHint(GL_POINT_SMOOTH, GL_NICEST);
+	glHint(GL_LINE_SMOOTH, GL_NICEST);
+	glHint(GL_POLYGON_SMOOTH, GL_NICEST);
 }
 
 void controller::resizeGL( int width, int height )

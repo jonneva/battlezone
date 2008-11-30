@@ -16,7 +16,10 @@ Window::Window()
 	move = new QSound(myConfig.soundMove);
 	fire = new QSound(myConfig.soundFire);
 	kill = new QSound(myConfig.soundKill);
-	move->setLoops( 5 );
+
+	// Removed because sounds in a loop cannot be stopped until the current loop
+	// finishes playing. (This can be added back later if it turns out to be the best way)
+	//move->setLoops( 5 );
 
 	keys.insert( Qt::Key_Up, Forward );
 	keys.insert( Qt::Key_Left, RotateLeft );
@@ -29,6 +32,7 @@ void Window::keyPressEvent( QKeyEvent *event )
 {
 	qDebug("Entering Window::keyPressEvent");
 	if ( event->isAutoRepeat() || !keys.contains( event->key() ) ) {
+		// Move sound loops can be repeated in here
 		event->ignore();
 		return;
 	}
@@ -83,7 +87,9 @@ void Window::keyReleaseEvent( QKeyEvent *event )
 	switch ( a ) {
 
 		case Forward:
+			qDebug("Entering Window::keyReleaseEvent, line %i", __LINE__);
 			move->stop();
+			qDebug("Entering Window::keyReleaseEvent, line %i", __LINE__);
 			break;
 
 		case RotateLeft:
