@@ -11,11 +11,8 @@
 
 #include "config.h"
 
-#define __DEBUG
+//#define __DEBUG
 
-#ifdef __DEBUG
-#include <QtDebug>
-#endif //ifdef __DEBUG
 
 
 config::config()

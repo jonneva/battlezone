@@ -14,6 +14,7 @@
 
 #include <QFile>
 #include <QStringList>
+#include <QtDebug>
 
 // config class. Gets settings from config file and exposes them.
 // Exposure is public (not get/set) for simplicity.

@@ -10,9 +10,10 @@ Window::Window()
 	mainLayout->addWidget( myController );
 	setLayout( mainLayout );
 
-	setWindowTitle("Battlezone");
+        setWindowTitle("Battlezone");
 
-	myConfig = config("battlezone.cfg");
+        myModels = model();
+
 	move = new QSound(myConfig.soundMove);
 	fire = new QSound(myConfig.soundFire);
 	kill = new QSound(myConfig.soundKill);
