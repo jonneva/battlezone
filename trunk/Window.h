@@ -3,6 +3,7 @@
 
 #include <QApplication>
 #include "controller.h"
+#include "model.h"
 
 class controller;
 
@@ -12,7 +13,8 @@ class Window : public QWidget
 
 public:
 	Window();
-	config myConfig;
+        config myConfig;
+        model myModels;
 
 protected:
 	void keyPressEvent( QKeyEvent *event );

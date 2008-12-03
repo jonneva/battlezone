@@ -11,10 +11,12 @@ HEADERS += config.h \
     main.h \
     network.h \
     Window.h \
-    controller.h
+    controller.h \
+    model.h
 SOURCES += config.cpp \
     main.cpp \
     Window.cpp \
-    controller.cpp
+    controller.cpp \
+    model.cpp
 QT += opengl \
     network
