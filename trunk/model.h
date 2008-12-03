@@ -30,7 +30,7 @@ class model
 
         void parseModels(QString pathFile);
 
-        void print();
+        void print(QList<point3d> printMe);
 
 };
 
