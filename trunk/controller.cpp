@@ -11,10 +11,10 @@ controller::controller( QWidget *parent, int timerInterval )
 		m_timer->start( timerInterval );
 	}
 
+	Models = model();
+
 	rtri = rquad = 0.0f;
 }
-
-
 
 void controller::initializeGL()
 {
@@ -61,6 +61,26 @@ void controller::paintGL()
 
 	glTranslatef(-1.5f,0.0f,-6.0f);
 	glRotatef(rtri,0.0f,1.0f,0.0f);
+//for(int i = 0; i < printMe.size(); i++) {
+//		qDebug() << printMe[i].x1 << "  " << printMe[i].y1 << "  " << printMe[i].z1 << "      "
+//				 << printMe[i].x2 << "  " << printMe[i].y2 << "  " << printMe[i].z2 << endl;
+
+	float x1, y1, z1, x2, y2, z2;
+
+	glBegin(GL_LINES);
+		glColor3f(0.0f,1.0f,0.0f); // Green
+		for(int line = 0; line < Models.projectile.size(); line++) {
+			x1 = Models.projectile[line].x1;
+			y1 = Models.projectile[line].y1;
+			z1 = Models.projectile[line].z1;
+			x2 = Models.projectile[line].x2;
+			y2 = Models.projectile[line].y2;
+			z2 = Models.projectile[line].z2;
+			glVertex3f(x1, y1, z1);
+			glVertex3f(x2, y2, z2);
+		}
+	glEnd();
+
 
 	glBegin(GL_TRIANGLES);
 		glColor3f(1.0f,0.0f,0.0f);

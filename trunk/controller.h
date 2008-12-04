@@ -10,6 +10,7 @@
 #include <QMap>
 
 #include "config.h"
+#include "model.h"
 
 class QTimer;
 
@@ -19,12 +20,12 @@ class controller : public QGLWidget
 private:
 	GLfloat rtri, rquad;
 	QTimer *m_timer;
+	model Models;	// [0] = tank, [1] = deadtank, [2] = projectile
 
 public:
 	controller( QWidget *parent = 0, int timerInterval = 0 );
 	QSize minimumSizeHint() const;
 	QSize sizeHint() const;
-
 
 protected:
 	void initializeGL();
@@ -34,8 +35,6 @@ protected:
 
 protected slots:
 	void timeOutSlot();
-
 };
-
 
 #endif

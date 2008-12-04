@@ -13,12 +13,12 @@ class Window : public QWidget
 
 public:
 	Window();
-        config myConfig;
-        model myModels;
+	config myConfig;
 
 protected:
 	void keyPressEvent( QKeyEvent *event );
 	void keyReleaseEvent( QKeyEvent *event );
+
 private:
 	controller *myController;
 	QSound *move;
