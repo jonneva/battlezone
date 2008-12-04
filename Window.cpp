@@ -1,6 +1,6 @@
 #include "Window.h"
 
-config myConfig("battlezone.cfg");
+config myModels("battlezone.cfg");
 
 Window::Window()
 {
@@ -10,9 +10,7 @@ Window::Window()
 	mainLayout->addWidget( myController );
 	setLayout( mainLayout );
 
-        setWindowTitle("Battlezone");
-
-        myModels = model();
+	setWindowTitle("Battlezone");
 
 	move = new QSound(myConfig.soundMove);
 	fire = new QSound(myConfig.soundFire);
