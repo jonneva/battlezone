@@ -12,11 +12,13 @@ HEADERS += config.h \
     network.h \
     Window.h \
     controller.h \
-    model.h
+    model.h \
+    object3d.h
 SOURCES += config.cpp \
     main.cpp \
     Window.cpp \
     controller.cpp \
-    model.cpp
+    model.cpp \
+    object3d.cpp
 QT += opengl \
     network

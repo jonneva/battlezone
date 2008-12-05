@@ -94,20 +94,20 @@ qint32 config::parseConfigFile(QString configFile)
 #ifdef __DEBUG
 void config::printPublicVars()
 {
-	qDebug() << "playerStartingLives:" << playerStartingLives << endl;
-	qDebug() << "playerTankSpeed:" << playerTankSpeed << endl;
-	qDebug() << "playerTankTurnRate: " << playerTankTurnRate << endl;
-	qDebug() << "projectileSpeed: " << projectileSpeed << endl;
-	qDebug() << "playerMaxInFlightProjectiles: " << playerMaxInFlightProjectiles << endl;
-	qDebug() << "playerTankMaxRof: " << playerTankMaxRof << endl;
-	qDebug() << "playerStartingAmmo: " << playerStartingAmmo << endl;
-	qDebug() << "playerTankMaxDetectibilityRange: " << playerTankMaxDetectibilityRange << endl;
-	qDebug() << "playerTankMaxEngageabilityRange: " << playerTankMaxEngageabilityRange << endl;
-	qDebug() << "soundMove: " << soundMove.toLocal8Bit().constData() << endl;
-	qDebug() << "soundFire: " << soundFire.toLocal8Bit().constData() << endl;
-	qDebug() << "soundKill: " << soundKill.toLocal8Bit().constData() << endl;
+	qDebug() << "playerStartingLives:" << playerStartingLives;
+	qDebug() << "playerTankSpeed:" << playerTankSpeed;
+	qDebug() << "playerTankTurnRate: " << playerTankTurnRate;
+	qDebug() << "projectileSpeed: " << projectileSpeed;
+	qDebug() << "playerMaxInFlightProjectiles: " << playerMaxInFlightProjectiles;
+	qDebug() << "playerTankMaxRof: " << playerTankMaxRof;
+	qDebug() << "playerStartingAmmo: " << playerStartingAmmo;
+	qDebug() << "playerTankMaxDetectibilityRange: " << playerTankMaxDetectibilityRange;
+	qDebug() << "playerTankMaxEngageabilityRange: " << playerTankMaxEngageabilityRange;
+	qDebug() << "soundMove: " << soundMove.toLocal8Bit().constData();
+	qDebug() << "soundFire: " << soundFire.toLocal8Bit().constData();
+	qDebug() << "soundKill: " << soundKill.toLocal8Bit().constData();
 	for(int i = 0; i < playerIpList.size(); ++i) {
-		qDebug() << "IP address number " << i << ": " << playerIpList.at(i).toLocal8Bit().constData() << endl;
+		qDebug() << "IP address number " << i << ": " << playerIpList.at(i).toLocal8Bit().constData();
 	}
 }
 #endif

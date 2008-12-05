@@ -8,6 +8,8 @@
 #include <QTimer>
 #include <QSound>
 #include <QMap>
+#include <QDebug>
+#include <cmath>
 
 #include "config.h"
 #include "model.h"
@@ -26,6 +28,20 @@ public:
 	controller( QWidget *parent = 0, int timerInterval = 0 );
 	QSize minimumSizeHint() const;
 	QSize sizeHint() const;
+	object3d tank;
+	object3d tankDestroyed;
+	object3d projectile;
+
+	GLfloat cameraAngle;
+	GLfloat cameraX, cameraY, cameraZ; // Camera position
+	GLfloat losX, losY, losZ; // Line of site
+
+	void cameraRotate(float angle);
+	void cameraMoveZ(int direction);
+
+	qint8 isMovingZ; // Is camera moving? 1 = forward, -1 = back, 0 = not moving
+	qint8 isRotating; // Is camera rotating? 1 = right, -1 = left, 0 = not rotating
+
 
 protected:
 	void initializeGL();
@@ -36,5 +52,8 @@ protected:
 protected slots:
 	void timeOutSlot();
 };
+
+
+
 
 #endif
