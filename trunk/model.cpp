@@ -49,9 +49,10 @@ void model::parseModels(QString filePath)
 			tank.append(line);
 			currentLine = file.readLine();
 		}
+#ifdef __DEBUG
 		qDebug() << "Tank points:";
 		this->print(tank);
-
+#endif
 		currentLine = file.readLine();
 		currentLine = file.readLine();
 		while(currentLine.size() != 1)
@@ -80,9 +81,10 @@ void model::parseModels(QString filePath)
 			deadTank.append(line);
 			currentLine = file.readLine();
 		}
+#ifdef __DEBUG
 		qDebug() << "Dead Tank points:";
 		this->print(deadTank);
-
+#endif
 		currentLine = file.readLine();
 		currentLine = file.readLine();
 		while(currentLine.size() != 1)
@@ -111,8 +113,10 @@ void model::parseModels(QString filePath)
 			projectile.append(line);
 			currentLine = file.readLine();
 		}
+#ifdef __DEBUG
 		qDebug() << "Projectile points:";
 		this->print(projectile);
+#endif
 	}
 }
 

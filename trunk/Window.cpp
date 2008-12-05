@@ -4,7 +4,7 @@ config myModels("battlezone.cfg");
 
 Window::Window()
 {
-	myController = new controller(0, 50);
+	myController = new controller(0, 30);
 
 	QHBoxLayout *mainLayout = new QHBoxLayout;
 	mainLayout->addWidget( myController );
@@ -41,21 +41,23 @@ void Window::keyPressEvent( QKeyEvent *event )
 
 	switch ( a ) {
 		case Forward:
-			qDebug("Entering Window::keyPressEvent, line %i", __LINE__);
 			move->play();
-			qDebug("Entering Window::keyPressEvent, line %i", __LINE__);
-			break;
-
-		case RotateLeft:
-			move->play();
-			break;
-
-		case RotateRight:
-			move->play();
+			myController->isMovingZ = 1;
 			break;
 
 		case Reverse:
 			move->play();
+			myController->isMovingZ = -1;
+			break;
+
+		case RotateLeft:
+			move->play();
+			myController->isRotating = -1;
+			break;
+
+		case RotateRight:
+			move->play();
+			myController->isRotating = 1;
 			break;
 
 		case Shoot:
@@ -86,21 +88,23 @@ void Window::keyReleaseEvent( QKeyEvent *event )
 	switch ( a ) {
 
 		case Forward:
-			qDebug("Entering Window::keyReleaseEvent, line %i", __LINE__);
 			move->stop();
-			qDebug("Entering Window::keyReleaseEvent, line %i", __LINE__);
-			break;
-
-		case RotateLeft:
-			move->stop();
-			break;
-
-		case RotateRight:
-			move->stop();
+			myController->isMovingZ = 0;
 			break;
 
 		case Reverse:
 			move->stop();
+			myController->isMovingZ = 0;
+			break;
+
+		case RotateLeft:
+			move->stop();
+			myController->isRotating = 0;
+			break;
+
+		case RotateRight:
+			move->stop();
+			myController->isRotating = 0;
 			break;
 
 		case Shoot:
