@@ -115,22 +115,13 @@ void controller::timeOutSlot()
 
 void controller::timeOut()
 {
-	tank.angle += 0.5f;
-	if(tank.angle > 360.0f) {
-		qDebug() << "Before:" << tank.angle;
-		tank.angle -= 360.0f;
-		qDebug() << "After:" << tank.angle;
-	}
+	tank.angle += 0.5f; // Rotate demo tank model
+	if(tank.angle > 360.0f)	tank.angle -= 360.0f;
 	if(tank.angle < -360.0) tank.angle += 360.0f;
 
-	tankDestroyed.angle -=2.8;
+	tankDestroyed.angle -=2.8; // Rotate demo destroyed tank model
 	if(tankDestroyed.angle > 360.0) tankDestroyed.angle -= 360.0f;
-	if(tankDestroyed.angle < -360.0)
-	{
-		qDebug() << "Before:" << tankDestroyed.angle;
-		tankDestroyed.angle += 360.0f;
-		qDebug() << "Before:" << tankDestroyed.angle;
-	}
+	if(tankDestroyed.angle < -360.0) tankDestroyed.angle += 360.0f; // Make sure angle stays valid
 	cameraAngle += isRotating * 0.1f;
 	cameraMoveZ(isMovingZ);
 
