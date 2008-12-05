@@ -4,7 +4,7 @@ config myModels("battlezone.cfg");
 
 Window::Window()
 {
-	myController = new controller(0, 30);
+	myController = new controller(0, 33);
 
 	QHBoxLayout *mainLayout = new QHBoxLayout;
 	mainLayout->addWidget( myController );
