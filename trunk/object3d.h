@@ -16,8 +16,12 @@ class object3d {
 public:
 	object3d();
 	object3d(QList<point3d> &lines);
-	void render(GLfloat rot = 0.0f);
+	void render(bool reorient = false);
 	QList<point3d> model3d;
 	GLfloat angle;
+
+	// This object's orientation, if used
+	GLfloat cameraX, cameraY, cameraZ; // Camera position
+	GLfloat losX, losY, losZ; // Line of site to orienting object
 };
 #endif // OBJECT3D_H

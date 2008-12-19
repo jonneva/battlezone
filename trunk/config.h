@@ -39,7 +39,6 @@ class config {
 
 	QStringList playerIpList;
 
-
 	// Function prototypes
 	config();
 	config(QString configFile);
