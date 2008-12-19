@@ -9,8 +9,8 @@
 #include <QSound>
 #include <QMap>
 #include <QDebug>
+#include <QtDebug>
 #include <cmath>
-
 #include "config.h"
 #include "model.h"
 
@@ -42,6 +42,8 @@ public:
 	qint8 isMovingZ; // Is camera moving? 1 = forward, -1 = back, 0 = not moving
 	qint8 isRotating; // Is camera rotating? 1 = right, -1 = left, 0 = not rotating
 
+	bool projectileActive; // Should we render the projectile? For demo purposes.
+	bool projectileLoadOrientation; // Does the camera position of the firing tank need to be recorded?
 
 protected:
 	void initializeGL();

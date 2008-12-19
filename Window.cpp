@@ -4,7 +4,7 @@ config myModels("battlezone.cfg");
 
 Window::Window()
 {
-	myController = new controller(0, 33);
+	myController = new controller(0, 10);
 
 	QHBoxLayout *mainLayout = new QHBoxLayout;
 	mainLayout->addWidget( myController );
@@ -61,6 +61,8 @@ void Window::keyPressEvent( QKeyEvent *event )
 			break;
 
 		case Shoot:
+			myController->projectileActive = true;
+			myController->projectileLoadOrientation = true;
 			fire->play();
 			break;
 
