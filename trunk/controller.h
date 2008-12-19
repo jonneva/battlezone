@@ -1,6 +1,16 @@
+//
+// Battlezone
+// A multiplayer remake of Atari's 1980 game: Battlezone
+// Authors: Charles Burns
+//          Trey Russell
+//
+// License: GPL3
+// http://www.gnu.org/copyleft/gpl.html
+//
+// Requires QT 4.3 by Nokia's Trolltech software
+
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
-
 
 #include <QtOpenGL>
 #include <QGLWidget>
@@ -54,8 +64,5 @@ protected:
 protected slots:
 	void timeOutSlot();
 };
-
-
-
 
 #endif
