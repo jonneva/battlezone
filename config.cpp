@@ -1,19 +1,17 @@
-// C++ Implementation: config
 //
-// Description: Functions for parsing the config file.
+// Battlezone
+// A multiplayer remake of Atari's 1980 game: Battlezone
+// Authors: Charles Burns
+//          Trey Russell
 //
+// License: GPL3
+// http://www.gnu.org/copyleft/gpl.html
 //
-// Author: Charles Burns
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+// Requires QT 4.3 by Nokia's Trolltech software
 
 #include "config.h"
 
 //#define __DEBUG
-
-
 
 config::config()
 {

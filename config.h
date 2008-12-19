@@ -1,13 +1,13 @@
 //
-// C++ Interface: config
+// Battlezone
+// A multiplayer remake of Atari's 1980 game: Battlezone
+// Authors: Charles Burns
+//          Trey Russell
 //
-// Description: Include for config.cpp
-// Class for reading and dispending configuration information
+// License: GPL3
+// http://www.gnu.org/copyleft/gpl.html
 //
-// Author: Charles Burns
-//
-// Copyright: See COPYING file that comes with this distribution
-//
+// Requires QT 4.3 by Nokia's Trolltech software
 
 #ifndef CONFIG_H
 #define CONFIG_H
@@ -19,7 +19,6 @@
 // config class. Gets settings from config file and exposes them.
 // Exposure is public (not get/set) for simplicity.
 class config {
-// Should use an IDE with auto-fill-in for these long variable names
 	public:
 
 	// These are the variables from the config file.
