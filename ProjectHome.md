@@ -1,0 +1,2 @@
+BattleZone was one of the first "3D" games. An early tank combat game, it used a different technique for drawing graphics than today's games do.
+This is a remake of only a few bare features of the original game, though very basic multi-player functionality is implemented as well.
